@@ -5,16 +5,21 @@ import { ref } from 'vue'
 //   msg: string
 // }>()
 
-const input = ref()
+const input = ref('')
 
-const handler = async () => {}
+// fetching data
+const handleSubmit = async () => {
+  // https://pokeapi.co/api/v2/pokemon/name
+}
 </script>
 
 <template>
   <div>
-    <form @submit.prevent="handler">
-      <input v-bind="input" type="text" />
+    <form @submit.prevent="handleSubmit">
+      <input v-model="input" type="text" placeholder="Pokemon" />
+      <button type="submit">Search</button>
     </form>
+    <p>The Pokemon you're looking for is {{ input }}</p>
   </div>
 </template>
 

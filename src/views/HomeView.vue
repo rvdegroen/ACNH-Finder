@@ -6,7 +6,7 @@ import SearchSummary from '../components/SearchSummary.vue'
 </script>
 
 <template>
-  <h1>ACNH Finder</h1>
+  <h1>Pokemon Finder</h1>
   <div>
     <SearchInput />
     <SearchResults />
