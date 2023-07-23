@@ -5,9 +5,6 @@
 <template>
   <div>
     <h1>Todo List</h1>
-    <SearchInput />
-    <SearchResults />
-    <SearchSummary />
   </div>
 </template>
 
