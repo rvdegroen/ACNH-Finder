@@ -2,11 +2,11 @@
 import { ref } from 'vue'
 import type { Cocktail } from './types'
 
-// defineProps<{
-//   msg: string
-// }>()
-
 const query = ref('')
+const emit = defineEmits<{
+  // name event, payload
+  updateCocktail: [cocktails: Cocktail[]]
+}>()
 
 // fetching data
 const handleSubmit = async () => {
@@ -20,15 +20,18 @@ const handleSubmit = async () => {
   const cocktails: Cocktail[] = await response.json()
   console.log(cocktails)
 
+  // emit fetched data to parent container
+  emit('updateCocktail', cocktails)
+
   query.value = ''
 }
 </script>
 
 <template>
   <div>
-    <p v-if="query">The Pokemon you're looking for is {{ query }}</p>
+    <p v-if="query">The cocktail you're looking for is {{ query }}</p>
     <form @submit.prevent="handleSubmit">
-      <input v-model="query" type="text" placeholder="Pokemon" />
+      <input v-model="query" type="text" placeholder="Cocktail" />
       <button type="submit">Search</button>
     </form>
   </div>

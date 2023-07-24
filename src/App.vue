@@ -6,7 +6,7 @@ import { RouterLink, RouterView } from 'vue-router'
   <!-- replaces component with HomeView -->
   <header>
     <nav>
-      <RouterLink to="/">ACNH Finder</RouterLink>
+      <RouterLink to="/">Cocktail Finder</RouterLink>
       <RouterLink to="/todolist">Todo List</RouterLink>
     </nav>
   </header>
