@@ -6,16 +6,21 @@ const router = createRouter({
   routes: [
     {
       path: '/',
-      name: 'home',
+      name: 'Home',
       component: HomeView
     },
     {
       path: '/todolist',
-      name: 'todolist',
+      name: 'TodoList',
       // route level code-splitting
       // this generates a separate chunk (About.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
       component: () => import('../views/TodoList.vue')
+    },
+    {
+      path: '/:catchAll(.*)',
+      name: 'NotFound',
+      component: () => import('../views/NotFound.vue')
     }
   ]
 })
